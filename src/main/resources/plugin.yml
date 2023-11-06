@@ -1,0 +1,11 @@
+name: ArchaicCore
+version: '${project.version}'
+main: me.b77.archaiccore.ArchaicCore
+authors: [ B77 ]
+description: A plugin required for Archaic Network
+commands:
+  archaic:
+    description: Main command for ArchaicCore
+    aliases:
+      - ar
+
