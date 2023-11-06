@@ -11,7 +11,7 @@ public class Discord {
 
     }
     public static void start_bot() {
-        String token = "MTEzMjgzMjQwMjM5NDMzMzI5Ng.GQxn59.zM3oH6B6rbI2t0E_JmDgzXei9ZeDqnCROaq9eY";
+        String token = "BOT TOKEN";
         jda = JDABuilder.createDefault(token).build();
         Discord bot = new Discord();
     }
