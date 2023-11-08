@@ -3,6 +3,7 @@ package me.b77.archaiccore.beacon;
 import me.b77.archaiccore.database.BeaconDatabase;
 import me.b77.archaiccore.database.PlayerDatabase;
 import me.b77.archaiccore.database.TeamDatabase;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -66,11 +67,17 @@ public class BeaconEvents implements Listener {
                 return;
             }
 
+            if (event.getBlock().getWorld() != Bukkit.getWorld("world")){
+                event.setCancelled(true);
+                player.sendMessage("You must place your beacon in the overworld!");
+            }
+
             int x = block.getX();
             int y = block.getY();
             int z = block.getZ();
 
             BeaconDatabase beacondatabase = new BeaconDatabase();
+
 
             if (!beacondatabase.beaconExists(placingTeam)){
                 beacondatabase.addBeacon(x,y,z,placingTeam);
